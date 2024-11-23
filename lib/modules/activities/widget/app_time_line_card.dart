@@ -93,7 +93,7 @@ class TimelineItem extends StatelessWidget {
                                     backgroundColor: AppConstColors.grey200,
                                     textColor: AppConstColors.grey500,
                                     suffixIcon: SvgPicture.asset(
-                                      AppConstIcons.user,
+                                      AppConstIcons.user_svg,
                                       height: 10,
                                     ),
                                     text: '$spotsAvailable spots left',
