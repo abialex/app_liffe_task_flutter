@@ -19,7 +19,7 @@ class AppCardInfo extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                AppConstTextMobile.subtitle1(text: "You' close to your goal!"),
+                AppConstTextMobile.subtitle1(text: "You' close to your goal!", maxLines: 2),
                 AppConstTextMobile.body2(
                   text: "Join more sport activities to collect more points",
                   fontWeight: FontWeight.w400,

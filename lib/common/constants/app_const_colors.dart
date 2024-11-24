@@ -14,7 +14,7 @@ class AppConstColors {
   static const Color yellow500 = Color(0xffF6DB43);
   static const Color yellow400 = Color(0xffFFE764);
   static const Color yellow300 = Color(0xffFFF09C);
-  static const Color yellow200 = Color(0xffC1EBFF);
+  static const Color yellow200 = Color(0xffFBF2C0);
   static const Color yellow100 = Color(0xffD5F1FF);
 
   static const Color purple600 = Color(0xff7C5D8E);

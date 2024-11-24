@@ -1,5 +1,8 @@
 // ignore_for_file: lines_longer_than_80_chars
 
+import 'package:app_liffe_task_flutter/common/constants/app_const_colors.dart';
+import 'package:app_liffe_task_flutter/common/widget/app_box.dart';
+import 'package:app_liffe_task_flutter/common/widget/app_menu_web.dart';
 import 'package:flutter/material.dart';
 
 class AppBodyBaseWeb extends StatelessWidget {
@@ -16,11 +19,25 @@ class AppBodyBaseWeb extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+      backgroundColor: AppConstColors.white,
+      body: Row(
         children: [
-          if (headerWidget == null) const SizedBox.shrink() else headerWidget!,
-          if (bodyWidget == null) const SizedBox.shrink() else Expanded(child: bodyWidget!),
-          if (footerWidget == null) const SizedBox.shrink() else footerWidget!,
+          const SizedBox(
+            width: 240,
+            child: MenuWeb(),
+          ),
+          AppBox.w20,
+          Expanded(
+            flex: 4,
+            child: Column(
+              children: [
+                AppBox.h52,
+                if (headerWidget == null) const SizedBox.shrink() else headerWidget!,
+                if (bodyWidget == null) const SizedBox.shrink() else Expanded(child: bodyWidget!),
+                if (footerWidget == null) const SizedBox.shrink() else footerWidget!,
+              ],
+            ),
+          ),
         ],
       ),
     );
