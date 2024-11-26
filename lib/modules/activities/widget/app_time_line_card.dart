@@ -6,7 +6,7 @@ import 'package:app_liffe_task_flutter/common/widget/app_card.dart';
 import 'package:app_liffe_task_flutter/common/widget/app_responsive_base.dart';
 import 'package:app_liffe_task_flutter/common/widget/app_text_style/app_text_style_desktop.dart';
 import 'package:app_liffe_task_flutter/common/widget/app_text_style/app_text_style_mobile.dart';
-import 'package:app_liffe_task_flutter/modules/activities/widget/app_button_dark.dart';
+import 'package:app_liffe_task_flutter/common/widget/buttons/app_button_dark.dart';
 import 'package:app_liffe_task_flutter/modules/activities/widget/app_label.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -20,6 +20,7 @@ class TimelineItem extends StatelessWidget {
   final double price;
   final double height;
   final List<AppLabel> labels;
+  final void Function() onTap;
 
   const TimelineItem({
     super.key,
@@ -30,6 +31,7 @@ class TimelineItem extends StatelessWidget {
     required this.duration,
     required this.spotsAvailable,
     required this.price,
+    required this.onTap,
     this.height = 130,
   });
 
@@ -134,7 +136,7 @@ class TimelineItem extends StatelessWidget {
                               vertical: AppSpacingEnum.small.size,
                             ),
                             enable: spotsAvailable != 0,
-                            onTap: () {},
+                            onTap: onTap,
                             text: spotsAvailable != 0 ? "Join" : "Sould out",
                           )
                         ],
@@ -227,7 +229,7 @@ class TimelineItem extends StatelessWidget {
                               vertical: AppSpacingEnum.small.size,
                             ),
                             enable: spotsAvailable != 0,
-                            onTap: () {},
+                            onTap: onTap,
                             text: spotsAvailable != 0 ? "Join" : "Sould out",
                           )
                         ],

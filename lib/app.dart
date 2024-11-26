@@ -1,5 +1,8 @@
+import 'package:app_liffe_task_flutter/common/cubit/dialog_alert_cubit/dialog_alert_cubit.dart';
+import 'package:app_liffe_task_flutter/common/widget/app_dialog_alert.dart';
 import 'package:app_liffe_task_flutter/config/app_routes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 // import 'package:portafolio_alexis/app/config/app_routes.dart';
 
 class MyApp extends StatelessWidget {
@@ -26,6 +29,15 @@ class MyApp extends StatelessWidget {
                 ),
               ),
               child: child!,
+            ),
+            BlocBuilder<DialogAlertCubit, DialogAlertState>(
+              builder: (context, state) {
+                if (state.show) {
+                  return const AppAlertDialog();
+                } else {
+                  return const SizedBox.shrink();
+                }
+              },
             ),
           ],
         );

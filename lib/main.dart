@@ -1,5 +1,6 @@
 import 'package:app_liffe_task_flutter/app.dart';
 import 'package:app_liffe_task_flutter/common/cubit/dark_mode_cubit.dart';
+import 'package:app_liffe_task_flutter/common/cubit/dialog_alert_cubit/dialog_alert_cubit.dart';
 import 'package:app_liffe_task_flutter/common/cubit/navigator_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -23,6 +24,7 @@ class Main extends StatelessWidget {
       providers: [
         BlocProvider(create: (context) => DarkModeCubit()),
         BlocProvider(create: (context) => NavigationCubit()),
+        BlocProvider(create: (context) => DialogAlertCubit()),
       ],
       child: const SafeArea(
         child: MyApp(),

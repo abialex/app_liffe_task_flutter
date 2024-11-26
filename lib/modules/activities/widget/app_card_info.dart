@@ -4,7 +4,7 @@ import 'package:app_liffe_task_flutter/common/widget/app_card.dart';
 import 'package:app_liffe_task_flutter/common/widget/app_responsive_base.dart';
 import 'package:app_liffe_task_flutter/common/widget/app_text_style/app_text_style_desktop.dart';
 import 'package:app_liffe_task_flutter/common/widget/app_text_style/app_text_style_mobile.dart';
-import 'package:app_liffe_task_flutter/modules/activities/widget/app_button_dark.dart';
+import 'package:app_liffe_task_flutter/common/widget/buttons/app_button_dark.dart';
 import 'package:flutter/material.dart';
 
 class AppCardInfo extends StatelessWidget {

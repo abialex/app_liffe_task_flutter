@@ -3,6 +3,7 @@ import 'package:app_liffe_task_flutter/common/constants/app_const_icons.dart';
 import 'package:app_liffe_task_flutter/common/constants/app_const_index.dart';
 import 'package:app_liffe_task_flutter/common/constants/app_enum_difficulty_activity.dart';
 import 'package:app_liffe_task_flutter/common/constants/app_enum_spacing.dart';
+import 'package:app_liffe_task_flutter/common/cubit/dialog_alert_cubit/dialog_alert_cubit.dart';
 import 'package:app_liffe_task_flutter/common/widget/app_box.dart';
 import 'package:app_liffe_task_flutter/common/widget/app_text_style/app_text_style_mobile.dart';
 import 'package:app_liffe_task_flutter/modules/activities/model/activity_data_model.dart';
@@ -120,6 +121,16 @@ class WebActivitiesBodyList extends StatelessWidget {
                       itemBuilder: (context, index) {
                         final item = activitiesByCategoryId[index];
                         return TimelineItem(
+                          onTap: () {
+                            context.read<DialogAlertCubit>().showCustomAlert(
+                                  icon: AppConstIcons.user_group_svg,
+                                  titulo: activitiesByCategoryId[index].title,
+                                  texto:
+                                      'Do you want to join the ${activitiesByCategoryId[index].title} in the ${activitiesByCategoryId[index].location}?',
+                                  onAceptar: () {},
+                                  onCancelar: () {},
+                                );
+                          },
                           time: item.time,
                           title: item.title,
                           duration: item.duration,

@@ -12,7 +12,7 @@ class AppConstIcons {
   static const String map_svg = '${_path}map-pin.svg';
   static const String user_svg = '${_path}user.svg';
   static const String logo_svg = '${_path}logo.svg';
-
+  static const String user_group_svg = '${_path}user-group.svg';
   static const String arrow_right_circle_svg = '${_path}arrow-right-circle.svg';
 
   //menu icons
