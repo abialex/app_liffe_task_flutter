@@ -139,16 +139,18 @@ class WebActivitiesBodyList extends StatelessWidget {
           ),
         ),
         Expanded(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: AppSpacingEnum.large.size),
-            child: Column(
-              children: [
-                const AppCardInfo(),
-                AppBox.h28,
-                const AppCardInfoYellow(),
-                AppBox.h28,
-                const AppCardInfoEventWithBackgroundImage()
-              ],
+          child: SingleChildScrollView(
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: AppSpacingEnum.large.size, vertical: AppSpacingEnum.medium.size),
+              child: Column(
+                children: [
+                  const AppCardInfo(),
+                  AppBox.h28,
+                  const AppCardInfoYellow(),
+                  AppBox.h28,
+                  const AppCardInfoEventWithBackgroundImage()
+                ],
+              ),
             ),
           ),
         )

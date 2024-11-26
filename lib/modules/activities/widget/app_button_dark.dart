@@ -1,6 +1,7 @@
 import 'package:app_liffe_task_flutter/common/constants/app_const_colors.dart';
 import 'package:app_liffe_task_flutter/common/constants/app_enum_radius.dart';
 import 'package:app_liffe_task_flutter/common/constants/app_enum_spacing.dart';
+import 'package:app_liffe_task_flutter/common/widget/app_responsive_base.dart';
 import 'package:app_liffe_task_flutter/common/widget/app_text_style/app_text_style_mobile.dart';
 import 'package:flutter/material.dart';
 
@@ -33,10 +34,15 @@ class AppButtonDark extends StatelessWidget {
               horizontal: AppSpacingEnum.small.size,
               vertical: AppSpacingEnum.extraSmall.size,
             ),
-        child: AppConstTextMobile.body2(
-          text: text,
-          color: AppConstColors.white,
-        ),
+        child: AppResponsiveBase(
+            mobile: AppConstTextMobile.body2(
+              text: text,
+              color: AppConstColors.white,
+            ),
+            web: AppConstTextMobile.body1(
+              text: text,
+              color: AppConstColors.white,
+            )),
       ),
     );
   }
