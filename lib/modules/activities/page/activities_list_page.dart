@@ -1,3 +1,4 @@
+import 'package:app_liffe_task_flutter/common/constants/app_const_index.dart';
 import 'package:app_liffe_task_flutter/common/widget/app_body_base/app_body_base_mobile.dart';
 import 'package:app_liffe_task_flutter/common/widget/app_body_base/app_body_base_web.dart';
 import 'package:app_liffe_task_flutter/common/widget/app_responsive_base.dart';
@@ -14,7 +15,7 @@ class ActivitiesListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => CategorySelectedCubit(),
+      create: (context) => CategorySelectedCubit(categoryIdInit: AppConstIndex.categoryIdAll),
       child: Builder(builder: (context) {
         return AppResponsiveBase(
           mobile: const AppBodyBaseMobile(

@@ -1,9 +1,11 @@
 import 'package:app_liffe_task_flutter/common/constants/app_const_colors.dart';
 import 'package:app_liffe_task_flutter/common/constants/app_const_icons.dart';
+import 'package:app_liffe_task_flutter/common/constants/app_const_index.dart';
 import 'package:app_liffe_task_flutter/common/constants/app_enum_difficulty_activity.dart';
 import 'package:app_liffe_task_flutter/common/constants/app_enum_spacing.dart';
 import 'package:app_liffe_task_flutter/common/widget/app_box.dart';
 import 'package:app_liffe_task_flutter/common/widget/app_text_style/app_text_style_mobile.dart';
+import 'package:app_liffe_task_flutter/modules/activities/model/activity_data_model.dart';
 import 'package:app_liffe_task_flutter/modules/activities/widget/app_card_info_event_with_background_image.dart';
 import 'package:app_liffe_task_flutter/modules/activities/widget/app_card_info_yellow.dart';
 import 'package:app_liffe_task_flutter/modules/activities/widget/app_time_line_card.dart';
@@ -105,26 +107,36 @@ class WebActivitiesBodyList extends StatelessWidget {
                 ],
               ),
               Expanded(
-                child: ListView.builder(
-                  itemCount: activities.length,
-                  itemBuilder: (context, index) {
-                    final item = activities[index];
-                    return TimelineItem(
-                      time: item.time,
-                      title: item.title,
-                      duration: item.duration,
-                      location: item.location,
-                      price: item.price,
-                      spotsAvailable: item.spotsAvailable,
-                      labels: item.dificultys
-                          .map(
-                            (e) => AppLabel(
-                              backgroundColor: e.colorBackground,
-                              textColor: e.colorText,
-                              text: e.name,
-                            ),
-                          )
-                          .toList(),
+                child: BlocBuilder<CategorySelectedCubit, CategoryDataModel?>(
+                  builder: (context, state) {
+                    late List<ActivityDataModel> activitiesByCategoryId;
+                    if (state?.id == AppConstIndex.categoryIdAll) {
+                      activitiesByCategoryId = activities;
+                    } else {
+                      activitiesByCategoryId = activities.where((element) => element.categoryId == state?.id).toList();
+                    }
+                    return ListView.builder(
+                      itemCount: activitiesByCategoryId.length,
+                      itemBuilder: (context, index) {
+                        final item = activitiesByCategoryId[index];
+                        return TimelineItem(
+                          time: item.time,
+                          title: item.title,
+                          duration: item.duration,
+                          location: item.location,
+                          price: item.price,
+                          spotsAvailable: item.spotsAvailable,
+                          labels: item.dificultys
+                              .map(
+                                (e) => AppLabel(
+                                  backgroundColor: e.colorBackground,
+                                  textColor: e.colorText,
+                                  text: e.name,
+                                ),
+                              )
+                              .toList(),
+                        );
+                      },
                     );
                   },
                 ),
