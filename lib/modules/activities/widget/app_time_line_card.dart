@@ -19,7 +19,9 @@ class TimelineItem extends StatelessWidget {
   final int spotsAvailable;
   final double price;
   final double height;
+  final bool isJoin;
   final List<AppLabel> labels;
+  final String textButton;
   final void Function() onTap;
 
   const TimelineItem({
@@ -32,6 +34,8 @@ class TimelineItem extends StatelessWidget {
     required this.spotsAvailable,
     required this.price,
     required this.onTap,
+    required this.isJoin,
+    required this.textButton,
     this.height = 130,
   });
 
@@ -135,9 +139,14 @@ class TimelineItem extends StatelessWidget {
                               horizontal: AppSpacingEnum.medium.size,
                               vertical: AppSpacingEnum.small.size,
                             ),
-                            enable: spotsAvailable != 0,
+                            enable: () {
+                              if (isJoin) {
+                                return false;
+                              }
+                              return spotsAvailable != 0;
+                            }(),
                             onTap: onTap,
-                            text: spotsAvailable != 0 ? "Join" : "Sould out",
+                            text: textButton,
                           )
                         ],
                       ),
@@ -199,28 +208,6 @@ class TimelineItem extends StatelessWidget {
                                   },
                                 )..addAll(labels),
                               ),
-                              // Row(
-                              //   children: [
-                              //     AppLabel(
-                              //       backgroundColor: AppConstColors.grey200,
-                              //       textColor: AppConstColors.grey500,
-                              //       suffixIcon: SvgPicture.asset(
-                              //         AppConstIcons.user,
-                              //         height: 10,
-                              //       ),
-                              //       text: '8 spots left',
-                              //     ),
-                              //     AppLabel(
-                              //       backgroundColor: AppConstColors.grey200,
-                              //       textColor: AppConstColors.grey500,
-                              //       suffixIcon: SvgPicture.asset(
-                              //         AppConstIcons.user,
-                              //         height: 10,
-                              //       ),
-                              //       text: '8 spots left',
-                              //     )
-                              //   ],
-                              // ),
                             ],
                           ),
                           AppButtonDark(
@@ -228,9 +215,14 @@ class TimelineItem extends StatelessWidget {
                               horizontal: AppSpacingEnum.medium.size,
                               vertical: AppSpacingEnum.small.size,
                             ),
-                            enable: spotsAvailable != 0,
+                            enable: () {
+                              if (isJoin) {
+                                return false;
+                              }
+                              return spotsAvailable != 0;
+                            }(),
                             onTap: onTap,
-                            text: spotsAvailable != 0 ? "Join" : "Sould out",
+                            text: textButton,
                           )
                         ],
                       ),

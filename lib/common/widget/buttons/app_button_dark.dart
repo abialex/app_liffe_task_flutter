@@ -20,9 +20,9 @@ class AppButtonDark extends StatelessWidget {
     return AppBasicButton(
       onTap: onTap,
       text: text,
-      backgroundColor: AppConstColors.dark,
+      backgroundColor: enable ? AppConstColors.dark : AppConstColors.grey500,
       textColor: AppConstColors.white,
-      borderColor: AppConstColors.dark,
+      borderColor: enable ? AppConstColors.dark : AppConstColors.grey500,
     );
   }
 }

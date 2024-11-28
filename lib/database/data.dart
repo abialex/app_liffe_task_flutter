@@ -18,10 +18,11 @@ final List<ActivityDataModel> activities = [
     duration: "60", // Duración en minutos
     title: "Morning Yoga",
     location: "Central Park",
-    spotsAvailable: 15,
+    spotsAvailable: 0,
     price: 10.0,
     dificultys: [DifficultyActivityEnum.lightIntensity, DifficultyActivityEnum.mediumIntensity],
     categoryId: 1, // Categoría 1
+    isJoin: true,
   ),
   const ActivityDataModel(
     id: 2,
@@ -29,10 +30,11 @@ final List<ActivityDataModel> activities = [
     duration: "120", // Duración en minutos
     title: "Rock Climbing",
     location: "Downtown Gym",
-    spotsAvailable: 8,
+    spotsAvailable: 0,
     price: 25.0,
     dificultys: [DifficultyActivityEnum.highIntensity],
     categoryId: 2, // Categoría 2
+    isJoin: false,
   ),
   const ActivityDataModel(
     id: 3,
@@ -44,6 +46,7 @@ final List<ActivityDataModel> activities = [
     price: 15.0,
     dificultys: [DifficultyActivityEnum.lightIntensity, DifficultyActivityEnum.childCare],
     categoryId: 3, // Categoría 3
+    isJoin: false,
   ),
   const ActivityDataModel(
     id: 4,
@@ -55,6 +58,7 @@ final List<ActivityDataModel> activities = [
     price: 12.0,
     dificultys: [DifficultyActivityEnum.lightIntensity],
     categoryId: 4, // Categoría 4
+    isJoin: false,
   ),
   const ActivityDataModel(
     id: 5,
@@ -66,5 +70,6 @@ final List<ActivityDataModel> activities = [
     price: 0.0, // Gratis
     dificultys: [DifficultyActivityEnum.mediumIntensity, DifficultyActivityEnum.workSpace],
     categoryId: 5, // Categoría 5
+    isJoin: true,
   ),
 ];
