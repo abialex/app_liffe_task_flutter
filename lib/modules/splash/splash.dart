@@ -28,10 +28,10 @@ class _SplashPageState extends State<SplashPage> {
   Widget build(BuildContext context) {
     return AppResponsiveBase(
       mobile: const AppBodyBaseMobile(
-        headerWidget: Text("data"),
+        headerWidget: Center(child: CircularProgressIndicator()),
       ),
       web: const AppBodyBaseWeb(
-        footerWidget: Text("soy la otra data web"),
+        footerWidget: Center(child: CircularProgressIndicator()),
       ),
     );
   }

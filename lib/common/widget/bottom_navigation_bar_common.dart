@@ -18,20 +18,25 @@ class CustomBottomNavigationBarCommon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      showSelectedLabels: true,
-      showUnselectedLabels: true,
-      unselectedItemColor: Colors.grey,
+      backgroundColor: AppConstColors.white,
+      showSelectedLabels: false,
+      showUnselectedLabels: false,
+      // enableFeedback: false,
+      type: BottomNavigationBarType.fixed,
+      unselectedItemColor: AppConstColors.dark,
       iconSize: 25,
       selectedLabelStyle: const TextStyle(
         fontSize: 10,
         fontWeight: FontWeight.bold,
-        color: AppConstColors.grey400,
+        color: AppConstColors.dark,
       ),
       unselectedLabelStyle: const TextStyle(
         fontSize: 10,
         fontWeight: FontWeight.normal,
-        color: Colors.grey,
+        color: Colors.deepOrangeAccent,
       ),
+      selectedItemColor: AppConstColors.childCare,
+      useLegacyColorScheme: true,
       items: <BottomNavigationBarItem>[
         BottomNavigationBarItem(
           icon: BottonBarImage(
@@ -39,7 +44,7 @@ class CustomBottomNavigationBarCommon extends StatelessWidget {
             index: 0,
             image: AppConstIcons.menu_calendar_svg,
           ),
-          label: 'Servicios',
+          label: '',
         ),
         BottomNavigationBarItem(
           icon: BottonBarImage(
@@ -47,7 +52,7 @@ class CustomBottomNavigationBarCommon extends StatelessWidget {
             index: 1,
             image: AppConstIcons.menu_map_svg,
           ),
-          label: 'Promociones',
+          label: '',
         ),
         BottomNavigationBarItem(
           icon: BottonBarImage(
@@ -55,7 +60,7 @@ class CustomBottomNavigationBarCommon extends StatelessWidget {
             index: 2,
             image: AppConstIcons.menu_plus_svg,
           ),
-          label: 'Agenda',
+          label: '',
         ),
         BottomNavigationBarItem(
           icon: BottonBarImage(
@@ -63,7 +68,7 @@ class CustomBottomNavigationBarCommon extends StatelessWidget {
             index: 3,
             image: AppConstIcons.menu_users_svg,
           ),
-          label: 'Noticias',
+          label: '',
         ),
         BottomNavigationBarItem(
           icon: BottonBarImage(
@@ -71,7 +76,7 @@ class CustomBottomNavigationBarCommon extends StatelessWidget {
             index: 4,
             image: AppConstIcons.menu_star_svg,
           ),
-          label: 'Contacto',
+          label: '',
         ),
       ],
       currentIndex: selectedIndex,

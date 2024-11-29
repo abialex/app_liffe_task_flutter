@@ -15,6 +15,7 @@ class ActivityDataModel with _$ActivityDataModel {
     required String location,
     required int spotsAvailable,
     required double price,
+    required bool isJoin,
     required List<DifficultyActivityEnum> dificultys,
   }) = _ActivityDataModel;
 
